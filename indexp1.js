@@ -25,7 +25,8 @@ function setup() {
     }
     // Now both currentBoard and nextBoard are array of array of undefined values.
     init(); // Set the initial values of the currentBoard and nextBoard
-
+    slider = createSlider(2, 20, 4, 1);
+    slider.position(213,665);
   }
 
   /**
@@ -51,6 +52,8 @@ function randomsetup() {
 
   function draw() {
     background(255);
+    speedY = slider.value();
+    frameRate(speedY)
     generate();
     for (let i = 0; i < columns; i++) {
       for (let j = 0; j < rows; j++) {
@@ -61,8 +64,8 @@ function randomsetup() {
         }
         stroke(strokeColor);
         rect(i * unitLength, j * unitLength, unitLength, unitLength);
-      }
-    }
+      } 
+    } 
   }
 
   function generate() {
@@ -139,7 +142,6 @@ function mouseDragged() {
 
   function pause() {
     noLoop();
-    mouseDragged();
   }
 
 
