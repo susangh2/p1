@@ -78,13 +78,13 @@ function draw() {
         stroke(strokeColor);
         fill(234, 255, 193);
         rect(i * unitLength, j * unitLength, unitLength, unitLength);
-        
+
         // image(img, this.i, this.j, width / unitLength, width / unitLength)
         image(img, i * unitLength, j * unitLength, unitLength, unitLength, 0, 0)
 
         // stroke(strokeColor);
         // fill(boxColor);
-        // rect(i * unitLength, j * unitLength, unitLength, unitLength);
+        // rect(i * unitLength, js * unitLength, unitLength, unitLength);
 
       } else {
         stroke(strokeColor);
