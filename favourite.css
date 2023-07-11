@@ -154,12 +154,12 @@ img {
 .pic::before{
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
+    /* top: 50%;
+    left: 50%; */
     transform: translate(-50%, -50%);
-    color: black  ;
+    /* color: black ;
     font-size: 50px;
-    font-weight: bold;
+    font-weight: bold; */
     width: 100%;
     margin-top:-150px;
     opacity: 0;
@@ -185,8 +185,8 @@ img {
 }
 
 .pic:hover::before{
-margin-top:0;
-opacity: 1;
+    margin-top:0;
+    opacity: 1;
 }
 
 @media (max-width: 992px) {
