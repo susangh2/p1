@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="favourite.css" />
+    <title>Favourite Quotes</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">S.W.</a></div>
+            <ul class="links">
+                <li><a href="home.html">Home</a> </li>
+                <li><a href="favourite.html">Favourite Things</a> </li>
+                <li><a href="plant.html">Game of Life</a> </li>
+            </ul>
+            <a href="mailto:email@email.com" class="action_btn">Contact</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="home.html" aria-label="home">Home</a> </li>
+            <li><a href="favourite.html" aria-label="my favourite things">Favourite Things</a> </li>
+            <li><a href="plant.html" aria-label="game of life">Game of Life</a> </li>
+            <li><a href="mailto:email@email.com" class="action_btn" aria-label="contact me via email">Contact</a></li>
+        </div>
+    </header>
+    <div class="pageheading d-flex justify-content-center"aria-label="Things that I like">Things that I like</div>
+    <div class="container text-center">
+            <div class="box">
+                <div class="pic"><div data-aos="fade-up"data-aos-anchor-placement="top-center"><img src="pancake.jpg" aria-label="I like eating dessert like pancakes."></div></div>
+                <div class="pic"><img src="squirrel.jpg" aria-label="squirrel are cute."></div>
+                <div class="pic"><div data-aos="fade-right"><img src="blueberries.jpg" aria-label="one of my favourite fruit is blueberries"></div></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="whales.jpg" aria-label="whales are lovely."></div>
+                <div class="pic"><div data-aos="fade-up-right"><img src="dog.jpg" aria-label="I also like dogs which are friendly."></div></div>
+                <div class="pic"><img src="giraffe.jpg" aria-label="giraffes are adorable."></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="cloudysky.jpg" aria-label="Sky varies differently and fun to look at."></div>
+                <div class="pic"><div data-aos="fade-left"><img src="forest2.jpg" aria-label="I like going to forest to explore."></div></div>
+                <div class="pic"><img src="starrysky.jpg"  aria-label="starry sky is beautiful."></div>
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+      <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
+
+</html>
