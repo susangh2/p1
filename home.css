@@ -71,6 +71,10 @@ header {
     display: none;
 }
 
+.toggle_btn i {
+    font-size: 50px;
+}
+
 .action_btn{
     background-color: orange;
     color: #fff;
@@ -103,7 +107,7 @@ header {
     height: 0;
     width: 300px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
+    /* backdrop-filter: blur(15px); */
     border-radius: 10px;
     overflow: scroll;
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -227,6 +231,8 @@ header {
     .navbar .links,
     .navbar .action_btn{
         display:none;
+
+
     }
 
     .navbar .toggle_btn {

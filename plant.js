@@ -8,10 +8,16 @@ let nextBoard;
 let img;
 let song;
 
+function randomFlower(){
+  let randomNum=Math.floor(Math.random()*2)
+  let flowers=["yellowflower.png, redflower.png","purpleflower.png"]
+  console.log({randomNum},flowers[randomNum]);
+  return flowers[randomNum]
+}
 
 function preload() {
   song = loadSound("happy114950.mp3")
-  img = loadImage('yellowflower.png')
+  img = loadImage(randomFlower())
 }
 
 const slider = document.querySelector('#speed');
@@ -25,7 +31,7 @@ slider.oninput = function () {
 
 
 function setup() {
-  const canvas = createCanvas(windowWidth - 220, windowHeight - 220);
+  const canvas = createCanvas(windowWidth - 450, windowHeight - 220);
   canvas.parent(document.querySelector("#canvas"));
 
   columns = floor(width / unitLength);
@@ -129,8 +135,9 @@ function generate() {
 
 
 function mouseDragged() {
+console.log({mouseX,mouseY});
 
-  if (mouseX > unitLength * columns || mouseY > unitLength * rows) {
+  if (mouseX > unitLength * columns || mouseY > unitLength * rows || mouseX <0 || mouseY<0) {
     return;
   }
   const x = Math.floor(mouseX / unitLength);
@@ -139,15 +146,19 @@ function mouseDragged() {
   fill(205, 133, 63);
   stroke(strokeColor);
   rect(x * unitLength, y * unitLength, unitLength, unitLength);
+  if (!song.isPlaying()) {
+    song.play()
+  }
+
 }
 
 
 function mousePressed() {
   noLoop();
   mouseDragged();
-  if (!song.isPlaying()) {
-    song.play()
-  }
+  // if (!song.isPlaying()) {
+  //   song.play()
+  // }
 }
 
 
@@ -206,3 +217,6 @@ document.querySelectorAll(".flowercolor")
 
   }
   
+  document.querySelector("#playgame").addEventListener("click", function () {
+    song.play();
+  });

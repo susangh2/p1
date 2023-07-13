@@ -213,7 +213,7 @@ img {
 @media(max-width:768px) {
     .dropdown_menu {
         left: 2rem;
-        width: unset;
+        width: 2rem;
     }
     .container{
         flex-direction: column;
